@@ -1,9 +1,9 @@
 import React from 'react';
 import './Header.css'
 
-const Header = () => {
+const Header = ({id}) => {
     return (
-        <header className="d-flex justify-content-center align-items-center">
+        <header className="d-flex justify-content-center align-items-center" id={id}>
             <div className="header-content w-50">
                 <h5 className="text-white">Best Quality Plumber Works</h5>
                 <hr className="w-25" />

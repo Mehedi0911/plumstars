@@ -4,7 +4,7 @@ const TechniciansTable = () => {
     const [techData, setTechData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/technicians')
+        fetch('https://arcane-reef-18482.herokuapp.com/technicians')
             .then(res => res.json())
             .then(data => {
                 setTechData(data);

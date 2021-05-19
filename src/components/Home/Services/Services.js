@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCard from '../ServiceCard/ServiceCard';
 
-const Services = () => {
+const Services = ({id}) => {
 
     const [services, setServices] = useState([])
 
     useEffect(() => {
-            const url = 'http://localhost:5000/services'
+            const url = 'https://arcane-reef-18482.herokuapp.com/services'
             fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -15,7 +15,7 @@ const Services = () => {
             })
     },[])
     return (
-        <section style={{background:'#EBECF0', paddingTop:"8rem", paddingBottom:'5rem'}}>
+        <section style={{background:'#EBECF0', paddingTop:"8rem", paddingBottom:'5rem'}} id={id}>
            <div className="container w-75 mt-5">
            <h5 className="section-heading">Our Services</h5>
            <div className="row pt-5">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import ServiceList from './ServiceList';
+import PanelHeader from '../PanelHeader/PanelHeader';
 const AddServices = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [imageURL, setImageURL] = useState(null);
@@ -16,7 +17,7 @@ const AddServices = () => {
         }
 
         //adding products to database....
-        const url = 'http://localhost:5000/addServices'
+        const url = 'https://arcane-reef-18482.herokuapp.com/addServices'
 
         if (imageURL !== null) {
                 fetch(url, {
@@ -57,7 +58,7 @@ const AddServices = () => {
 
     return (
         <section className="container pt-5">
-            <h5>Services</h5>
+             <PanelHeader header={"Add Service"}></PanelHeader>
             <div className="addServiceForm row">
                 <div className="col-md-4 mb-5">
                 <form onSubmit={handleSubmit(onSubmit)}>

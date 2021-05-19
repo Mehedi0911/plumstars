@@ -3,9 +3,9 @@ import './About.css'
 import aboutImg from '../../../Images/image1.jpg'
 import aboutIcon1 from '../../../Images/icons/aboutIcon1.svg'
 import aboutIcon2 from '../../../Images/icons/aboutIcon2.svg'
-const About = () => {
+const About = ({id}) => {
     return (
-        <section className="container w-75">
+        <section className="container w-75" id={id}>
             <div className="row">
                 <div className="col-md-6 d-flex align-items-center">
                     <div className="abt-img">
@@ -31,7 +31,7 @@ const About = () => {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, facere?</p>
                             </div>
                         </div>
-                        <button className="brand-btn-ternary">Learn More</button>
+                        <button className="brand-btn-secondary mt-3">Learn More</button>
                     </div>
                 </div>
             </div>

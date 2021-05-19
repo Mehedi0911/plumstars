@@ -1,0 +1,15 @@
+.custom-quote{
+    background: linear-gradient(
+        rgba(35, 43, 56, 0.7),
+        rgba(35, 43, 56, 0.7)
+    ), url(../../../Images/image1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.send-btn{
+    float: right;
+}

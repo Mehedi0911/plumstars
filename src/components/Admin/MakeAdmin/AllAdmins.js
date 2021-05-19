@@ -4,7 +4,7 @@ const AllAdmins = () => {
     const [adminsData, setAdminData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/admins')
+        fetch('https://arcane-reef-18482.herokuapp.com/admins')
         .then(res => res.json())
         .then(data =>{
             setAdminData(data);

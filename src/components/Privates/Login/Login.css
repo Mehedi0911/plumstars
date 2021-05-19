@@ -1,0 +1,75 @@
+.form-holder{
+    text-align: center;
+    border: none;
+    margin: 0 auto; 
+    padding: 2rem 1rem;
+}
+
+.create-account-btn{
+    background: tomato;
+    border: none;
+    border-radius: 10px;
+    margin: 1rem auto;
+    padding: .5rem 2rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    outline: none;
+   
+}
+
+
+.submit{
+    background: tomato;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+}
+
+.oldUser-heading{
+    display: flex;
+    align-items: center;
+    margin:  0 auto;
+    justify-content: center;
+    color: white;
+}
+
+.oldUser-heading h6{
+    margin-left: 1rem;
+    color: white;
+    text-decoration: underline;
+}
+
+.input-container input{
+    margin-bottom: 1rem;
+    width: 300px;
+    border: none;
+    line-height: 1.6rem;
+    outline: none;
+    padding: .35rem;
+    border-radius: 5px;
+}
+
+.input-container input:focus{   
+    outline: none;
+}
+
+.provider-btn button{
+    
+    display: block;
+    text-align: center;
+    margin: 1rem auto;
+    color: #ffffff;
+    background-color: tomato;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none ;
+    border-radius: 10px;
+    padding: .5rem 2rem;
+    outline: none;
+    
+
+}

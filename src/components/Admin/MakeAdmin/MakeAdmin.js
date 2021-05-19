@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import PanelHeader from '../PanelHeader/PanelHeader';
 import AllAdmins from './AllAdmins';
 const MakeAdmin = () => {
     const [adminData, setAdminData] = useState([])
@@ -11,7 +12,7 @@ const MakeAdmin = () => {
                 role:data.role
         }
 
-        fetch('http://localhost:5000/addAdmin',{
+        fetch('https://arcane-reef-18482.herokuapp.com/addAdmin',{
             method:'POST',
             headers:{'content-type': 'application/json'},
             body:JSON.stringify(adminData)
@@ -24,7 +25,7 @@ const MakeAdmin = () => {
     }
     return (
         <section className="container pt-5">
-            <h5>Manage Admins</h5>
+             <PanelHeader header={"Make Admin"}></PanelHeader>
             <div className="row">
                 <div className="col-md-4 pt-3 mb-5">
                   <form  onSubmit={handleSubmit(onSubmit)}>

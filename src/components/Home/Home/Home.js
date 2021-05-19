@@ -1,22 +1,30 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import About from '../About/About';
+import ClientReviews from '../ClientReviews/ClientReviews';
 import Features from '../Features/Features';
 import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
 import NewsLetter from '../NewsLetter/NewsLetter';
+import Quote from '../Quote/Quote';
 import Services from '../Services/Services';
+import Technicians from '../Technicians/Technicians';
 import WhyUs from '../WhyUs/WhyUs';
 
 const Home = () => {
   return (
     <div>
       <Navigation></Navigation>
-      <Header></Header>
+      <Header id={'header'}></Header>
       <Features></Features>
-      <About></About>
+      <About id={'about'}></About>
       <WhyUs></WhyUs>
       <NewsLetter></NewsLetter>
-      <Services></Services>
+      <Services id={'services'}></Services>
+      <ClientReviews></ClientReviews>
+      <Quote id={'quote'}></Quote>
+      <Technicians></Technicians>
+      <Footer></Footer>
     </div>
   );
 };

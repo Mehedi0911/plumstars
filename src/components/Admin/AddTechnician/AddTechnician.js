@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import TechniciansTable from './TechniciansTable';
+import PanelHeader from '../PanelHeader/PanelHeader';
 
 const AddTechnician = () => {
     const [techImageURL, setTechImageURL] = useState(null);
@@ -14,7 +15,7 @@ const AddTechnician = () => {
             dataAppointed: new Date().toDateString()
         }
         if(techImageURL!== null){
-            fetch('http://localhost:5000/addTechnicians',{
+            fetch('https://arcane-reef-18482.herokuapp.com/addTechnicians',{
                 method: 'POST',
                 headers:{'content-type' : 'application/json'},
                 body: JSON.stringify(techData)
@@ -44,7 +45,7 @@ const AddTechnician = () => {
     }
     return (
         <section className="container pt-5">
-            <h5>Add Technician</h5>
+            <PanelHeader header={"Add Technician"}></PanelHeader>
             <div className="row">
                 <div className="col-md-4">
                 <form onSubmit={handleSubmit(onSubmit)}>
