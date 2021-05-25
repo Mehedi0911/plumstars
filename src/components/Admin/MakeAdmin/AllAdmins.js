@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
 const AllAdmins = () => {
     const [adminsData, setAdminData] = useState([])
 
@@ -9,7 +10,17 @@ const AllAdmins = () => {
         .then(data =>{
             setAdminData(data);
         })
-    })
+    },[adminsData])
+
+    const handleDeleteAdmin = (id) => {
+        fetch(`http://localhost:5000/deleteAdmin/${id}`, {
+            method:'DELETE'
+        })
+        .then(res => res.json())
+        .then(result => {
+            console.log('deleted successfully');
+        })
+    }
     return (
         <div>
             <h5>All Admins</h5>
@@ -30,6 +41,8 @@ const AllAdmins = () => {
                                 <td>{admin.name}</td>
                                 <td>{admin.email}</td>
                                 <td>{admin.role}</td>
+                                <button className="btn btn-warning mr-3 mt-2 p-0 pl-2 pr-2 text-white"><FontAwesomeIcon className="text-white" icon={faEdit} /> Edit</button>
+                                <button onClick={() => {handleDeleteAdmin(admin._id)}} className="btn btn-danger mt-2 p-0 pl-2 pr-2"><FontAwesomeIcon className="text-white" icon={faTrash} /> Delete</button>
                             </tr>
                         )
                     }

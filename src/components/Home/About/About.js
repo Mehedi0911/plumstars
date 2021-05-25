@@ -1,16 +1,16 @@
 import React from 'react';
 import './About.css'
-import aboutImg from '../../../Images/image1.jpg'
+import aboutImg from '../../../Images/AboutImage.svg'
 import aboutIcon1 from '../../../Images/icons/aboutIcon1.svg'
 import aboutIcon2 from '../../../Images/icons/aboutIcon2.svg'
 const About = ({id}) => {
     return (
-        <section className="container w-75" id={id}>
+        <section className="container w-75 about" id={id}>
             <div className="row">
                 <div className="col-md-6 d-flex align-items-center">
-                    <div className="abt-img">
+                   
                     <img className="w-100 about-image" src={aboutImg} alt=""/>
-                    </div>
+                    
                 </div>
                 <div className="col-md-6">
                     <h4 className="section-heading">About Us</h4>

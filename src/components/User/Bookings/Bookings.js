@@ -8,18 +8,18 @@ const Bookings = () => {
     const [bookingData, setBookingData] = useState([]);
 
     useEffect(() => {
-        fetch('https://arcane-reef-18482.herokuapp.com/allBookings')
+        fetch('https://arcane-reef-18482.herokuapp.com/userBookings?email='+loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 setBookingData(data);
-                console.log(data[0]);
+                console.log(data);
 
             })
     }, [])
-    console.log(loggedInUser);
+    
     return (
         <section className="container p-5">
-            <PanelHeader header={"your Bookings"}></PanelHeader>
+            <PanelHeader header={"Your Bookings"}></PanelHeader>
             <div className="row">
                 {
                     bookingData.map(booking => <BookingCard booking={booking}></BookingCard>)

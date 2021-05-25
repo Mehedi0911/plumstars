@@ -19,8 +19,9 @@ const Home = () => {
       <Features></Features>
       <About id={'about'}></About>
       <WhyUs></WhyUs>
-      <NewsLetter></NewsLetter>
+      
       <Services id={'services'}></Services>
+      <NewsLetter></NewsLetter>
       <ClientReviews></ClientReviews>
       <Quote id={'quote'}></Quote>
       <Technicians></Technicians>

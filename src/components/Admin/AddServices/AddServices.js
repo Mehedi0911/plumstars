@@ -20,23 +20,23 @@ const AddServices = () => {
         const url = 'https://arcane-reef-18482.herokuapp.com/addServices'
 
         if (imageURL !== null) {
-                fetch(url, {
-                    method: 'POST',
-                    headers:{
-                        'content-type' : 'application/json'
-                    },
-                    body: JSON.stringify(serviceData)
-                })
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(serviceData)
+            })
                 .then(res => {
                     console.log("server side response", res);
                 })
-                e.target.reset();
-                setImageURL(null);
+            e.target.reset();
+            setImageURL(null);
         }
 
-        else(alert('Image is not uploaded'))
+        else (alert('Image is not uploaded'))
         console.log(serviceData);
-       
+
     };
 
     const handleImageUpload = (event) => {
@@ -58,21 +58,19 @@ const AddServices = () => {
 
     return (
         <section className="container pt-5">
-             <PanelHeader header={"Add Service"}></PanelHeader>
-            <div className="addServiceForm row">
-                <div className="col-md-4 mb-5">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input name="title" type="text" className="form-control mb-3" placeholder="Product Name" {...register("title")} required />
-                    <input name="price" type="text" className="form-control  mb-3" placeholder="Product Price" {...register("price")} required />
-                    <textarea name="description" class="form-control  mb-3" rows="3" placeholder="Description" {...register("description")} required></textarea>
-                    <input onChange={handleImageUpload} name="image" type="file" className="mb-3" required /> <br />
-                    <input className="brand-btn-secondary" type="submit" value="ADD" />
-                </form>
+           
+            <div className="addServiceForm">
+                <div>
+                <h5 className="mb-3 brand-text">Add Service</h5>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input name="title" type="text" className="form-control mb-3" placeholder="Product Name" {...register("title")} required />
+                        <input name="price" type="text" className="form-control  mb-3" placeholder="Product Price" {...register("price")} required />
+                        <textarea name="description" class="form-control  mb-3" rows="3" placeholder="Description" {...register("description")} required></textarea>
+                        <input onChange={handleImageUpload} name="image" type="file" className="mb-3" required /> <br />
+                        <input className="brand-btn-secondary" type="submit" value="ADD" />
+                    </form>
                 </div>
-                <div className="col-md-8 pl-5">
-                   <ServiceList></ServiceList>
-                    
-                </div>
+            
             </div>
         </section>
     );

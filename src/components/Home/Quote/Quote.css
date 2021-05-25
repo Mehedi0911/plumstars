@@ -2,11 +2,12 @@
     background: linear-gradient(
         rgba(35, 43, 56, 0.7),
         rgba(35, 43, 56, 0.7)
-    ), url(../../../Images/image1.jpg);
+    ), url(../../../Images/newsimage.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: sans-serif;
 
 }
 

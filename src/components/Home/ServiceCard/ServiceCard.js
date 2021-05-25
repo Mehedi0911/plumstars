@@ -12,10 +12,10 @@ const ServiceCard = (props) => {
                 history.push(`/checkout/${_id}`)
     }
     return (
-        <div className="col-md-4">
+        <div className="col-md-4 text-center">
             <div className="p-3 service-content shadow-sm">
-                <div className="img-div">
-                <img className="image-fluid w-100"  src={imgURL} alt="" />
+                <div className="img-div text-center">
+                <img src={imgURL} alt="" />
                 </div>
                <h5 className="brand-text mt-3">{title}</h5>
                <p>{description}</p>

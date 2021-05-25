@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
 const TechniciansTable = () => {
     const [techData, setTechData] = useState([])
 
@@ -10,7 +11,17 @@ const TechniciansTable = () => {
                 setTechData(data);
                 console.log(data);
             })
-    }, [])
+    }, [techData])
+
+    const handleDeleteTech = (id) => {
+        fetch(`http://localhost:5000/deleteTech/${id}`, {
+            method:'DELETE'
+        })
+        .then(res => res.json())
+        .then(result => {
+            console.log('deleted successfully');
+        })
+    }
     return (
         <div>
             <h5>All Technicians</h5>
@@ -31,6 +42,8 @@ const TechniciansTable = () => {
                                 <td>{tech.name}</td>
                                 <td>{tech.details}</td>
                                 <td>{tech.dataAppointed}</td>
+                                <button className="btn btn-warning mr-3 mt-2 p-0 pl-2 pr-2 text-white"><FontAwesomeIcon className="text-white" icon={faEdit} /> Edit</button>
+                                <button onClick={() => handleDeleteTech(tech._id)} className="btn btn-danger mt-2 p-0 pl-2 pr-2"><FontAwesomeIcon className="text-white" icon={faTrash} /> Delete</button>
                             </tr>
                         )
                     }

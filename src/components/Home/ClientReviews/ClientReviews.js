@@ -32,9 +32,9 @@ const ClientReviews = () => {
 
     return (
         <section className="container p-5">
-            <h5 className="section-heading">What Our Client Says</h5>
+            <h5 className="section-heading text-center">What Our Client Says</h5>
             <>
-                <Swiper slidesPerView={1} spaceBetween={30} keyboard={{
+                <Swiper slidesPerView={1} onDurationChange={10} spaceBetween={30} keyboard={{
                     "enabled": true
                 }} pagination={{
                     "clickable": true

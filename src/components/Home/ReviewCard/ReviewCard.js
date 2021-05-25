@@ -17,12 +17,12 @@ const ReviewCard = (props) => {
     console.log(filledStar,blankStar);
     return (
         <div>
-            <div className="p-5">
+            <div style={{fontFamily:'sans-serif'}} className="p-5">
 
                 <img className="mb-3" style={{ height: '75px', borderRadius: '50%' }} src={userImg} alt="" />
                <div className="mb-3">
                {
-                    filledStar.map(a => <FontAwesomeIcon style={{color:'tomato'}} icon={faStar}/>)
+                    filledStar.map(a => <FontAwesomeIcon style={{color:'#FF9E55'}} icon={faStar}/>)
                 }
                 {
                     blankStar.map(a =><FontAwesomeIcon style={{color:'gray'}} icon={faStar}/>)

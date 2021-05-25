@@ -2,27 +2,17 @@
     background: white;
     border-radius: 5px;
     margin-bottom: 1rem;
-    
-}
-
-.img-div{
-    overflow: hidden;
-    
-
-}
-
-.img-div img{
-    border-radius: 5px;
-}
-
-.img-div img:hover{
     transition: all ease .4s;
-    transform: scale(1.1);
-   
+    height: 400px;
+    
 }
+.service-content:hover{
+    background: #FFEEE2;
+}
+
 
 .book-btn{
-    background: tomato;
+    background: #FF9E55;
     padding: .35rem 1rem;
     border:none;
     border-radius: 10px 0;

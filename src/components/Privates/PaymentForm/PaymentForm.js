@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import { UserContext } from '../../../App';
 const PaymentForm = ({handleBackBtn, customerData}) => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [paymentInfo, setPaymentInfo] = useState({})
   const [hasPaid, setHasPaid] = useState(false)
     const stripe = useStripe();
@@ -44,7 +46,8 @@ const PaymentForm = ({handleBackBtn, customerData}) => {
       const newBooking = {
         customerDetails : customerData,
         paymentID :paymentInfo,
-        setState:'In Review'
+        setState:'In Review',
+        userEmail:loggedInUser.email
       }
       history.push("/confirm");
       console.log(newBooking);

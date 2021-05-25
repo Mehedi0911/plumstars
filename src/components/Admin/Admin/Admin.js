@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import {useHistory} from 'react-router';
 import About from '../../Home/About/About';
 import './Admin.css'
 import NewsLetter from '../../Home/NewsLetter/NewsLetter';
@@ -7,6 +8,7 @@ import AddTechnician from '../AddTechnician/AddTechnician';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Appointments from '../Appoinments/Appointments';
 import { UserContext } from '../../../App';
+import ServiceList from '../AddServices/ServiceList';
 const Admin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [admins, setAdmins] =  useState([])
@@ -21,9 +23,18 @@ const Admin = () => {
             })
     },[])
 
+    const handleLogout = () => {
+        setLoggedInUser({});
+    }
+
+    let history =  useHistory();
+    const handleHomeBtn = () => {
+        history.push('/home');
+    }
+
     return (
         
-        <div>
+        <div className="admin-content">
            {
                 admins.find(admin => admin.email === loggedInUser.email)?
                <div>
@@ -37,7 +48,13 @@ const Admin = () => {
                        admins.find(admin => admin.email === loggedInUser.email && admin.role==='Admin') && <p onClick={() => setURL('admin')}>Admin</p>
                     }
                     <p onClick={() => setURL('apps')}>Appointments</p>
+                    <div className="pt-5 mt-5 ml-3"> 
+                    <button onClick={handleHomeBtn} className="brand-btn-primary mr-2">Home</button>
+                    <button onClick={handleLogout} className="btn btn-danger">Logout</button>
                 </div>
+                </div>
+
+               
     
                 
                 <div class="content">
@@ -45,7 +62,7 @@ const Admin = () => {
                         URL=='tech'? <AddTechnician></AddTechnician>
                         : URL=='admin'?  <MakeAdmin></MakeAdmin>
                         : URL=='apps'?  <Appointments></Appointments>
-                        :<AddServices></AddServices>
+                        :<ServiceList></ServiceList>
                     }
                 </div>
                </div>

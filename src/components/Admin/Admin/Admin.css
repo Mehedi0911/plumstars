@@ -1,3 +1,7 @@
+.admin-content{
+  font-family: sans-serif;
+}
+
 .sidebar {
     margin: 0;
     padding: 0;
@@ -19,16 +23,19 @@
   
   /* Active/current link */
   .sidebar p.active {
-    background-color: tomato;
+    background-color: #8C9DF4;
     color: white;
   }
   
+  .sidebar p:focus{
+    background-color: #8C9DF4;
+  }
 
 
   
   /* Links on mouse-over */
   .sidebar p:hover:not(.active) {
-    background-color: tomato;
+    background-color: #8C9DF4;
     color: white;
     
   }

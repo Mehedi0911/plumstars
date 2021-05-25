@@ -1,16 +1,30 @@
 .newsImage{
-    height: 200px;
-    width: 100%;
-}
-
-.newsletter{
-    background: tomato;
-    transform: translateY(50%);
+    height: 205px;
     
 }
 
-.newsContent input{
+.news-img{
+    overflow: hidden;
+}
+
+.newsletter{
+    background: #8C9DF4;
+    font-family: sans-serif;
+   
+    
+}
+
+.newsContent .email{
 border: none;
 outline: none;
+padding:.5rem .5rem;
 
+}
+
+.newsContent .email-btn{
+    background: #FF9E55;
+    border: none;
+outline: none;
+padding:.5rem .5rem;
+color: white;
 }

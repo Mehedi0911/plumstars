@@ -3,9 +3,11 @@ import hours from '../../../Images/icons/24-hours.svg'
 import delivery from '../../../Images/icons/delivery.svg'
 import plumber from '../../../Images/icons/plumber.svg'
 import './Features.css'
+import ScrollAnimation from 'react-animate-on-scroll';
 const Features = () => {
     return (
         <section className="container w-75 features">
+            <ScrollAnimation animateIn='animate__fadeInUp' duration={1}>
             <div className="row feat-container">
                 <div className="col-md-4 brand-bg-primary feat-card">
                     <div className="p-3 text-center">
@@ -35,6 +37,7 @@ const Features = () => {
                     </div>
                 </div>
             </div>
+            </ScrollAnimation>
         </section>
     );
 };

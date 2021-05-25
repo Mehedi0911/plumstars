@@ -1,18 +1,19 @@
 .brand-text{
-    color: tomato;
+    color: #8C9DF4;
 }
 .section-heading{
-    color: lightsalmon;
+    color: #FF9E55;
     position: relative;
     margin-bottom: 3rem;
     z-index: 1;
     margin: 1rem 0;
-    font-family: "Anton", sans-serif;
+    font-family: sans-serif;
     letter-spacing: .05rem;
-
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-.section-heading::before{
+/* .section-heading::before{
     content: url(../src/Images/icons/PlumbAfter.png);
     opacity: 0.3;
     position: absolute;
@@ -21,11 +22,11 @@
     height: 20px;
     z-index: -1;
     }
-    
+     */
 
 .brand-btn-primary{
     color: white;
-    background: tomato;
+    background: #8C9DF4;
     outline: none;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -37,8 +38,8 @@
   }
 
   .brand-btn-primary:hover{
-    border: 2px solid #d0452d;
-    background: #d0452d;
+    border: 2px solid #8C9DF4;
+    background: #8C9DF4;
     
   }
   
@@ -83,7 +84,7 @@
     font-family: 'Poppins', sans-serif;
   }
   .brand-bg-primary{
-    background: tomato;
+    background: #8C9DF4;
     }
     
     .brand-bg-secondary{

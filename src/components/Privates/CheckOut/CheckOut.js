@@ -34,7 +34,6 @@ const CheckOut = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data, e) => {
-        data.userEmail = loggedInUser.email;
         data.serviceTitle = service.title;
         data.servicePrice = service.price;
         data.bookingDate = new Date().toDateString();

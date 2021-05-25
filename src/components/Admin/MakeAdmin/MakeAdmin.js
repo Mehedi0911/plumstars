@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import PanelHeader from '../PanelHeader/PanelHeader';
 import AllAdmins from './AllAdmins';
+
 const MakeAdmin = () => {
     const [adminData, setAdminData] = useState([])
     const { register, handleSubmit, watch, formState: { errors } } = useForm();

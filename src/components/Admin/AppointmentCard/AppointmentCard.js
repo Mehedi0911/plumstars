@@ -6,16 +6,16 @@ const AppointmentCard = ({ booking }) => {
     const { id } = paymentID;
     const {_id} = booking;
     console.log(booking);
-    const [editState, setEditState] = useState('')
+    // const [editState, setEditState] = useState('')
 
-    useEffect(() => {
-        fetch(`https://arcane-reef-18482.herokuapp.com/editService/${_id}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data[0].customerDetails.setState);
-            setEditState(data[0].customerDetails.setState)
-        })
-    },[])
+    // useEffect(() => {
+    //     fetch(`https://arcane-reef-18482.herokuapp.com/editService/${_id}`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data[0].customerDetails.setState);
+    //         setEditState(data[0].customerDetails.setState)
+    //     })
+    // },[])
 
     const handleOnchange = (e) => {
         const setState = e.target.value;
