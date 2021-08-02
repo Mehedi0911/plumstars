@@ -7,6 +7,11 @@
     text-decoration: none;
     font-weight: 600;
 }
+.brand-logo:hover{
+cursor: pointer;
+transform: scale(1.1);
+transition: all ease .4s;
+}
 
 .nav-item:hover{
     cursor: pointer;

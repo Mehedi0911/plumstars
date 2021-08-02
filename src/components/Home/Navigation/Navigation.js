@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import logo from '../../../Images/icons/logo pb.png'
 import { useHistory } from 'react-router';
 import { Nav, Navbar, Button, Container } from 'react-bootstrap';
 import burgerMenu from '../../../Images/icons/menu.svg'
@@ -33,7 +34,8 @@ const Navigation = () => {
     return (
         <Navbar style={{ background: '#ffeee1' }} expand="lg" fixed="top" className="shadow-sm">
             <Container>
-                <Navbar.Brand onClick={() => animateScroll.scrollToTop()} className="text-white"><span className="brand-text">plumb</span>Stars</Navbar.Brand>
+                <img className="brand-logo" onClick={() => animateScroll.scrollToTop()} style={{height:'35px'}} src={logo} alt="" />
+                {/* <Navbar.Brand onClick={() => animateScroll.scrollToTop()} className="text-white"><span className="brand-text">plumb</span>Stars</Navbar.Brand> */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav"><img style={{ height: '50px' }} src={burgerMenu} alt="" /></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-white mt-3 nav-container">
@@ -102,7 +104,7 @@ const Navigation = () => {
                         }
                         {
                             loggedInUser.email && <div className='d-flex'>
-                                <p style={{ color: '#292929', fontFamily: 'sans-serif', fontWeight: '600' }} className='mr-2 ml-3'>{loggedInUser.displayName}</p>
+                                <p onClick={() => setShowPopup(!showPopup)} style={{ color: '#292929', fontFamily: 'sans-serif', fontWeight: '600' }} className='mr-2 ml-3'>{loggedInUser.displayName}</p>
                                 <img onClick={() => setShowPopup(!showPopup)} className="userImage" style={{ height: '25px', borderRadius: '50%' }} src={loggedInUser.photoURL} alt="" />
                                 <FontAwesomeIcon className="drop-icon" icon={faSortDown} />
                             </div>

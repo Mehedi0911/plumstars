@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 const EditService = ({ serviceToEdit, setCanEdit }) => {
     const [imageURL, setImageURL] = useState(null);
     const [editedServiceData, setEditedServiceData] = useState({
@@ -14,7 +16,7 @@ const EditService = ({ serviceToEdit, setCanEdit }) => {
         e.preventDefault();
         //    console.log(editedServiceData);
         setCanEdit(false)
-        fetch(`http://localhost:5000/updateService/${serviceToEdit._id}`, {
+        fetch(`https://arcane-reef-18482.herokuapp.com/updateService/${serviceToEdit._id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(editedServiceData)
@@ -76,15 +78,19 @@ const EditService = ({ serviceToEdit, setCanEdit }) => {
     return (
         <div className="addServiceForm m-auto w-75">
             <div>
-                <h5 className="mb-3 brand-text">Edit Service: {serviceToEdit.imgURL}</h5>
+                <h5 className="mb-3 brand-text">Edit Service</h5>
                 <form onSubmit={handleSubmit}>
                     <div className="d-flex">
                         <input onBlur={handleBlur} Value={serviceToEdit.title} name="title" type="text" className="form-control  mb-3 mr-3" placeholder="Product Price" required />
                         <input onBlur={handleBlur} Value={serviceToEdit.price} name="price" type="text" className="form-control  mb-3" placeholder="Product Price" required />
                     </div>
-                    <div className="d-flex">
+                    <div className="">
                         <textarea onBlur={handleBlur} defaultValue={serviceToEdit.description} name="description" class="form-control mb-3 mr-5" rows="7" placeholder="Description" required></textarea>
-                        <input onChange={handleImageUpload} style={{ height: "30px" }} name="image" type="file" className="mb-3 bg-dark" /> <br />
+                        <div class="upload-btn-wrapper">
+                            <button className="upload-btn mb-3 mr-5"><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Image</button>
+                            <input onChange={handleImageUpload} type="file" name="image"/>
+                        </div><br />
+                        {/* <input onChange={handleImageUpload} style={{ height: "30px" }} name="image" type="file" className="mb-3 bg-dark" /> <br /> */}
                     </div>
                     <input className="brand-btn-secondary" type="submit" value="Update" />
                 </form>

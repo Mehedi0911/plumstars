@@ -16,7 +16,7 @@ import ReviewCard from '../ReviewCard/ReviewCard';
 // install Swiper modules
 SwiperCore.use([Keyboard, Pagination, Navigation]);
 
-const ClientReviews = () => {
+const ClientReviews = ({id}) => {
 
     const [reviews, setReviews] = useState([])
 
@@ -31,7 +31,7 @@ const ClientReviews = () => {
     }, [])
 
     return (
-        <section className="container p-5">
+        <section className="container p-5" id={id}>
             <h5 className="section-heading text-center">What Our Client Says</h5>
             <>
                 <Swiper slidesPerView={1} onDurationChange={10} spaceBetween={30} keyboard={{

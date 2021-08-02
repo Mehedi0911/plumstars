@@ -13,7 +13,7 @@ const AllAdmins = () => {
     },[adminsData])
 
     const handleDeleteAdmin = (id) => {
-        fetch(`http://localhost:5000/deleteAdmin/${id}`, {
+        fetch(`https://arcane-reef-18482.herokuapp.com/deleteAdmin/${id}`, {
             method:'DELETE'
         })
         .then(res => res.json())

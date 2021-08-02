@@ -14,7 +14,7 @@ const TechniciansTable = () => {
     }, [techData])
 
     const handleDeleteTech = (id) => {
-        fetch(`http://localhost:5000/deleteTech/${id}`, {
+        fetch(`https://arcane-reef-18482.herokuapp.com/deleteTech/${id}`, {
             method:'DELETE'
         })
         .then(res => res.json())

@@ -2,19 +2,23 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faPhoneSquareAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import logo from '../../../Images/icons/logo pb.png'
 const Footer = () => {
+    const handleSocialIconClick = (url) => {
+        window.open(url);
+    }
     return (
         <footer className="bg-dark">
             <div className="container w-75 pt-5 pb-5">
                 <div className="row">
                     <div className="col-md-3 mb-5">
-                        <h5 className="text-white"><span className="brand-text">plumb</span>Stars</h5>
+                       <img style={{ height:'50px'}} className='mb-3' src={logo} alt="" />
                         <p className='text-white'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus consectetur.</p>
                         <div className="social d-flex justify-content-between w-75">
-                            <div className="p-2 bg-white d-flex align-items-center justify-content-center mr-2"><FontAwesomeIcon className="brand-text" icon={faFacebook} /></div>
-                            <div className="p-2 bg-white d-flex align-items-center justify-content-center mr-2"><FontAwesomeIcon className="brand-text" icon={faInstagram} /></div>
-                            <div className="p-2 bg-white d-flex align-items-center justify-content-center mr-2"><FontAwesomeIcon className="brand-text" icon={faTwitter} /></div>
-                            <div className="p-2 bg-white d-flex align-items-center justify-content-center mr-2"><FontAwesomeIcon className="brand-text" icon={faLinkedin} /></div>
+                            <div style={{cursor:'pointer'}} onClick={() => handleSocialIconClick('https://www.facebook.com/')} className="p-2 bg-white d-flex align-items-center justify-content-center mr-2"><FontAwesomeIcon className="brand-text" icon={faFacebook} /></div>
+                            <div style={{cursor:'pointer'}} onClick={() => handleSocialIconClick('https://www.instagram.com/')} className="p-2 bg-white d-flex align-items-center justify-content-center mr-2"><FontAwesomeIcon className="brand-text" icon={faInstagram} /></div>
+                            <div style={{cursor:'pointer'}} onClick={() => handleSocialIconClick('https://twitter.com/')} className="p-2 bg-white d-flex align-items-center justify-content-center mr-2"><FontAwesomeIcon className="brand-text" icon={faTwitter} /></div>
+                            <div style={{cursor:'pointer'}} onClick={() => handleSocialIconClick('https://www.linkedin.com/')} className="p-2 bg-white d-flex align-items-center justify-content-center mr-2"><FontAwesomeIcon className="brand-text" icon={faLinkedin} /></div>
 
                         </div>
                     </div>
@@ -22,12 +26,12 @@ const Footer = () => {
                         <h5 className="text-white">Top Services</h5>
                         <hr />
                         <ul>
-                            <li className="text-white">Heater Repair</li>
-                            <li className="text-white">Heater Repair</li>
-                            <li className="text-white">Heater Repair</li>
-                            <li className="text-white">Heater Repair</li>
-                            <li className="text-white">Heater Repair</li>
-                            <li className="text-white">Heater Repair</li>
+                            <li className="text-white">Leak Repair</li>
+                            <li className="text-white">Drain Cleaning</li>
+                            <li className="text-white">Water Heater Repair</li>
+                            <li className="text-white">Sewer Repair</li>
+                            <li className="text-white">Toilet Repair</li>
+                            <li className="text-white">Garbage Disposal</li>
                         </ul>
                     </div>
                     <div className="col-md-3 mb-5">

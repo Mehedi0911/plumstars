@@ -21,8 +21,8 @@ const Home = () => {
       <WhyUs></WhyUs>
       
       <Services id={'services'}></Services>
-      <NewsLetter></NewsLetter>
-      <ClientReviews></ClientReviews>
+      <NewsLetter ></NewsLetter>
+      <ClientReviews id={'review'}></ClientReviews>
       <Quote id={'quote'}></Quote>
       <Technicians></Technicians>
       <Footer></Footer>

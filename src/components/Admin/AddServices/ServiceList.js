@@ -23,7 +23,7 @@ const ServiceList = () => {
   
 
     const handleEditBtnClick = (id) => {
-            fetch(`http://localhost:5000/editService/${id}`)
+            fetch(`https://arcane-reef-18482.herokuapp.com/editService/${id}`)
                 .then(res => res.json())
                 .then(data => {
                     setServiceToEdit(data[0]);
@@ -33,7 +33,7 @@ const ServiceList = () => {
     }
 
     const handleDeleteBtnClick = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://arcane-reef-18482.herokuapp.com/delete/${id}`, {
             method:'DELETE'
         })
         .then(res => res.json())

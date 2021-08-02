@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import TechniciansTable from './TechniciansTable';
 import PanelHeader from '../PanelHeader/PanelHeader';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 
 const AddTechnician = () => {
     const [techImageURL, setTechImageURL] = useState(null);
@@ -51,7 +53,11 @@ const AddTechnician = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input name="name" type="text" className="form-control mb-3" placeholder="Technician Name" {...register("name")} required />
                     <textarea name="details" class="form-control  mb-3" rows="3" placeholder="Details" {...register("details")} required></textarea>
-                    <input onChange={handleImageUpload} name="image" type="file" className="mb-3" required /> <br />
+                    {/* <input onChange={handleImageUpload} name="image" type="file" className="mb-3" required /> <br /> */}
+                    <div class="upload-btn-wrapper">
+                            <button className="upload-btn mb-3 mr-5"><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Image</button>
+                            <input onChange={handleImageUpload} onChange={handleImageUpload} type="file" name="image"  required/>
+                    </div><br />
                     <input className="brand-btn-secondary" type="submit" value="Appoint" />
                 </form>
                 </div>

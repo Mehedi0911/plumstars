@@ -13,7 +13,7 @@ const ServiceCard = (props) => {
     }
     return (
         <div className="col-md-4 text-center">
-            <div className="p-3 service-content shadow-sm">
+            <div className="service-content shadow-sm">
                 <div className="img-div text-center">
                 <img src={imgURL} alt="" />
                 </div>

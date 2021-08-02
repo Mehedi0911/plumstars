@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css'
 import headerImg from '../../../Images/headerImg.svg'
 import ScrollAnimation from 'react-animate-on-scroll';
+import { Link } from 'react-scroll';
 const Header = ({ id }) => {
     return (
         <header className="d-flex justify-content-center align-items-center" id={id}>
@@ -14,8 +15,29 @@ const Header = ({ id }) => {
 
                             <h3 className="brand-text">Work in Your Comfort</h3>
                             <p style={{ opacity: '.7' }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium a quibusdam, vero ut corporis non voluptates. Exercitationem, facilis labore. Sed magni dignissimos quis doloremque nobis.</p>
-                            <button className='brand-btn-primary'>Appointment</button>
-                            <button className='brand-btn-secondary'>Learn More</button>
+                            <button className='brand-btn-primary appointment-btn'>
+                            <Link
+                                activeClass='active'
+                                to='services'
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={600}>
+                                Appointment
+                            </Link>
+                                </button>
+                            <button className='brand-btn-secondary'>
+                            <Link
+                                activeClass='active'
+                                to='about'
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={600}>
+                                Learn More
+                            </Link>
+                                
+                                </button>
                         </div>
                     </ScrollAnimation>
                 </div>

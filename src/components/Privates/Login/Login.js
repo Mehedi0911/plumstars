@@ -177,8 +177,8 @@ const Login = () => {
                             newUser && <input onBlur={handleBlur} type="text" name="name" id="" placeholder="Your Name" required />
                         }
                         <br />
-                        <input onBlur={handleBlur} type="email" name="email" id="" placeholder="Your Email" required /> <br />
-                        <input onBlur={handleBlur} type="password" name="password" id="" placeholder="Your Password" required /> <br />
+                        <input  onBlur={handleBlur} type="email" name="email" id="" placeholder="Your Email" required /> <br />
+                        <input  onBlur={handleBlur} type="password" name="password" id="" placeholder="Your Password" required /> <br />
                         {
                             newUser && <input onBlur={handleBlur} type="password" name="cPassword" id="" placeholder="Confirm Password" required />
                         }

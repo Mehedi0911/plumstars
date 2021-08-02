@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import ServiceList from './ServiceList';
 import PanelHeader from '../PanelHeader/PanelHeader';
+import './AddService.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 const AddServices = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [imageURL, setImageURL] = useState(null);
@@ -58,19 +61,24 @@ const AddServices = () => {
 
     return (
         <section className="container pt-5">
-           
+
             <div className="addServiceForm">
                 <div>
-                <h5 className="mb-3 brand-text">Add Service</h5>
+                    <h5 className="mb-3 brand-text">Add Service</h5>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input name="title" type="text" className="form-control mb-3" placeholder="Product Name" {...register("title")} required />
                         <input name="price" type="text" className="form-control  mb-3" placeholder="Product Price" {...register("price")} required />
                         <textarea name="description" class="form-control  mb-3" rows="3" placeholder="Description" {...register("description")} required></textarea>
-                        <input onChange={handleImageUpload} name="image" type="file" className="mb-3" required /> <br />
+                        {/* <input onChange={handleImageUpload} name="image" type="file" className="mb-3" required /> <br /> */}
+                        <div class="upload-btn-wrapper">
+                            <button className="upload-btn mb-3"><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Image</button>
+                            <input onChange={handleImageUpload} type="file" name="image" required/>
+                        </div>
+                        <br />
                         <input className="brand-btn-secondary" type="submit" value="ADD" />
                     </form>
                 </div>
-            
+
             </div>
         </section>
     );
